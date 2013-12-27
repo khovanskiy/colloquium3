@@ -51,7 +51,7 @@ public class SubjectsAdapter extends ArrayAdapter<Subject>
             @Override
             public boolean onLongClick(View v)
             {
-                Intent intent = new Intent(program, SubTasksEditActivity.class);
+                Intent intent = new Intent(program, SubjectEditActivity.class);
                 intent.putExtra("ID_SUBJECT", subject.id_subject);
                 program.startActivity(intent);
                 return true;
