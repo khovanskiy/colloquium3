@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tasks Manager 1.0</string>
-    <string name="addmarkbutton">+</string>
-    <string name="defaultsubjectname">New task</string>
-    <string name="savebutton">Save</string>
-    <string name="deletebutton">Delete</string>
-    <string name="addsubjectbutton">Add new subject</string>
-    <string name="defaultmarkname">New subtask</string>
-    <string name="subjectnamelabel">Name</string>
-    <string name="marknamelabel">Name</string>
-    <string name="subtaskstypelabel">Type</string>
-    <string name="subjectsheaderlabel">List of tasks</string>
+    <string name="app_name">Tasks Manager 2.0</string>
+    <string name="add_new_subtask">Добавить новую подзадачу</string>
+    <string name="default_task_name">Новая задача</string>
+    <string name="savebutton">Сохранить</string>
+    <string name="deletebutton">Удалить</string>
+    <string name="addsubjectbutton">Добавить новую задачу</string>
+    <string name="default_subtask_name">Новая подзадача</string>
+    <string name="subjectnamelabel">Введите название задачи</string>
+    <string name="marknamelabel">Название</string>
+    <string name="subtaskstypelabel">Тип</string>
     <string name="markseditheaderlabel">Subtask edit</string>
+    <string name="tasks_activity_title">Список задач</string>
+    <string name="subtasks_activity_title">Список подзадач</string>
+    <string name="edit_task_activity_title">Редактирование задачи</string>
+    <string name="edit_subtask_activity_title">Редактирование подзадачи</string>
     <string-array name="types_array">
-        <item>High</item>
-        <item>Normal</item>
-        <item>Done</item>
+        <item>Важная</item>
+        <item>Обычная</item>
+        <item>Выполненная</item>
     </string-array>
 </resources>

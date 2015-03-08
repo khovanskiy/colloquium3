@@ -13,14 +13,12 @@ import android.widget.TextView;
 
 import java.util.Vector;
 
-class SubTasksAdapter extends ArrayAdapter<SubTask>
-{
+class SubTasksAdapter extends ArrayAdapter<SubTask> {
     private final Context context;
     public Vector<SubTask> subtasks;
     private SubTasksActivity program;
 
-    public SubTasksAdapter(Context context, Vector<SubTask> entries, SubTasksActivity program)
-    {
+    public SubTasksAdapter(Context context, Vector<SubTask> entries, SubTasksActivity program) {
         super(context, R.layout.subtask, entries);
         this.context = context;
         this.subtasks = entries;
@@ -33,22 +31,18 @@ class SubTasksAdapter extends ArrayAdapter<SubTask>
         View markView = inflater.inflate(R.layout.subtask, parent, false);
 
         TextView markTitleView = (TextView) markView.findViewById(R.id.subtask_title);
-        ImageView subtasksStarView = (ImageView)markView.findViewById(R.id.imageView);
+        ImageView subtasksStarView = (ImageView) markView.findViewById(R.id.imageView);
 
         final SubTask subtask = subtasks.get(index);
 
         markTitleView.setText(subtask.title);
-        if (subtask.type == 0)
-        {
+        if (subtask.type == 0) {
             subtasksStarView.setVisibility(View.VISIBLE);
-        }
-        else
-        {
+        } else {
             subtasksStarView.setVisibility(View.INVISIBLE);
             markTitleView.setTextColor(Color.WHITE);
         }
-        if (subtask.type == 2)
-        {
+        if (subtask.type == 2) {
             markTitleView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             markTitleView.setTextColor(Color.WHITE);
         }

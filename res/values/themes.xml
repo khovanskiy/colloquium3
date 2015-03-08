@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="UITheme" parent="android:Theme.Holo">
+        <item name="android:windowActionBar">true</item>
+        <item name="android:actionBarStyle">@style/UIActionBar</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="UIActionBar" parent="android:Widget.ActionBar">
+        <item name="android:background">@android:color/holo_green_dark</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:titleTextStyle">@style/UIActionBarTitle</item>
+    </style>
+
+    <style name="UIActionBarTitle" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

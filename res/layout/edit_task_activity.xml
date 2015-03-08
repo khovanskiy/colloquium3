@@ -3,38 +3,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:paddingTop="?android:attr/actionBarSize"
+        >
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/subjectnamelabel"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/editSubjectName"
+                android:hint="@string/default_task_name"/>
+    </LinearLayout>
 
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="50dp">
-        <TextView
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:text="@string/subjectnamelabel"
-                android:id="@+id/textView" android:gravity="center_vertical|left" android:layout_marginLeft="5dp"/>
-        <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="@string/defaultsubjectname"
-                android:id="@+id/editSubjectName" android:layout_gravity="center"/>
-    </LinearLayout>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp">
+
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:text="@string/savebutton"
-                android:id="@+id/saveButton" android:layout_weight="1" android:enabled="true"
+                android:id="@+id/saveButton"
+                android:layout_weight="1"
+                android:enabled="true"
                 android:onClick="onSaveButtonClicked"/>
+
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/deletebutton"
-                android:id="@+id/deleteButton" android:layout_weight="1" android:enabled="true"
+                android:id="@+id/deleteButton"
+                android:layout_weight="1"
+                android:enabled="true"
                 android:onClick="onDeleteButtonClicked"/>
     </LinearLayout>
 </LinearLayout>

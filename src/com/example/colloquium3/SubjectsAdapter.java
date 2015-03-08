@@ -10,49 +10,43 @@ import android.widget.TextView;
 
 import java.util.Vector;
 
-public class SubjectsAdapter extends ArrayAdapter<Subject>
-{
-    private final Context context;
-    public Vector<Subject> channels;
-    private Program program;
+public class SubjectsAdapter extends ArrayAdapter<Task> {
+    public Vector<Task> channels;
+    private TasksActivity program;
 
-    public SubjectsAdapter(Context context, Vector<Subject> subjects, Program program)
-    {
-        super(context, R.layout.subject, subjects);
-        this.context = context;
-        this.channels = subjects;
+    public SubjectsAdapter(Context context, Vector<Task> tasks, TasksActivity program) {
+        super(context, R.layout.task_layout, tasks);
+        this.channels = tasks;
         this.program = program;
     }
 
     @Override
-    public View getView(int index, View convertView, ViewGroup parent)
-    {
+    public View getView(int index, View convertView, ViewGroup parent) {
+        final Task task = channels.get(index);
+
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View entryView = inflater.inflate(R.layout.subject, parent, false);
+        View entryView = inflater.inflate(R.layout.task_layout, parent, false);
 
         TextView subjectNameView = (TextView) entryView.findViewById(R.id.subjectName);
+        subjectNameView.setText(task.name);
 
-        final Subject subject = channels.get(index);
+        TextView subtasksCountView = (TextView) entryView.findViewById(R.id.subtasksCount);
+        subtasksCountView.setText(task.points + "");
 
-        subjectNameView.setText(subject.name);
-
-        entryView.setOnClickListener(new View.OnClickListener()
-        {
+        entryView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(program, SubTasksActivity.class);
-                intent.putExtra("ID_SUBJECT", subject.id_subject);
+                intent.putExtra("ID_SUBJECT", task.id_subject);
                 program.startActivity(intent);
             }
         });
 
         entryView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View v)
-            {
+            public boolean onLongClick(View v) {
                 Intent intent = new Intent(program, SubjectEditActivity.class);
-                intent.putExtra("ID_SUBJECT", subject.id_subject);
+                intent.putExtra("ID_SUBJECT", task.id_subject);
                 program.startActivity(intent);
                 return true;
             }
